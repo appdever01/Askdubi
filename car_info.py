@@ -99,4 +99,4 @@ def get_car_addresses(brandId, modelId, year):
         print(f"Error fetching car results: {response.status_code}")
         return []
 
-print(get_car_addresses(149,252,'2020'))
+# print(get_car_addresses(149,252,'2020'))
