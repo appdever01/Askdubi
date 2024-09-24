@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 user_track = {}
 brands = get_car_brands()
+print(brands)
 # Main logic to handle user interaction
 def handle_user_input(phone_number, message, btn_id):
     if btn_id == "go_back":
