@@ -32,7 +32,11 @@ def handle_user_input(phone_number, message, btn_id):
 
     elif step == 'choose_brand':
         # Step 2: User selects a car brand by replying with a number
-        if message !='':
+        if message == "":
+            user_track[phone_number]['step'] = 'choose_brand'
+            del user_track[phone_number]['model'] 
+            handle_user_input(phone_number, "", "")
+        else:
             try:
                 chosen_brand_index = user_track.get(phone_number, {}).get('brandIndex') if user_track.get(phone_number, {}).get('brandIndex')  else int(message) - 1  # Convert user input to an index
                 print(chosen_brand_index)
@@ -59,7 +63,7 @@ def handle_user_input(phone_number, message, btn_id):
                     send_message(phone_number, "Invalid selection ❗️. Please reply with a valid number. ")
             except ValueError:
                 send_message(phone_number, "Invalid input ❗️. Please reply with a number corresponding to your choice.")
-
+        
     elif step == 'choose_model':
         # Step 3: User selects a car model by replying with a number
         if message == "":
