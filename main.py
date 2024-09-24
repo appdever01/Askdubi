@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 user_track = {}
 brands = get_car_brands()
-print(brands)
 # Main logic to handle user interaction
 def handle_user_input(phone_number, message, btn_id):
     if btn_id == "go_back":
@@ -253,7 +252,7 @@ def webhook_post():
                 "type": msg_type,
                 "btn_id": btn_id
             }
-            requests.post('https://6bbf-102-89-75-4.ngrok-free.app', json=refined_json)
+            requests.post('https://askdubi.tekcify.com', json=refined_json)
             return '', 200
         else:
             return '', 404 
