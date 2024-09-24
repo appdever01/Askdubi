@@ -158,7 +158,7 @@ def handle_user_input(phone_number, message, btn_id):
                 if results:
                     for result in results:
                         print(result['image'])
-                        message = f"""*{result['name']}*\n\n*Condition:* {result['mw_condition']}\n*Year:* {result['mw_year']}\n*Price:* {result['mw_price']}\n*Transmission:* {result['mw_transmission']}\n*Fuel Type:* {result['mw_fueltype']}\n*Engine Size:* {result['mw_enginesize']}\n*Address:* {result['mw_street_addr']}\n\nVisit {result['link']} for full details ✨🚗."""
+                        message = f"""*{result['name']}*\n\n*Condition:* {result['mw_condition']}\n*Year:* {result['mw_year']}\n*Price:* ${result['mw_price']}\n*Transmission:* {result['mw_transmission']}\n*Fuel Type:* {result['mw_fueltype']}\n*Engine Size:* {result['mw_enginesize']}\n*Address:* {result['mw_street_addr']}\n\nVisit {result['link']} for full details ✨🚗."""
                         send_image(phone_number, result['image'],  message)
                        
                 else:
@@ -185,7 +185,7 @@ def handle_user_input(phone_number, message, btn_id):
                 if results:
                     for result in results:
                         print(result['image'])
-                        message = f"""*{result['name']}*\n\n*Condition:* {result['mw_condition']}\n*Year:* {result['mw_year']}\n*Price:* {result['mw_price']}\n*Transmission:* {result['mw_transmission']}\n*Fuel Type:* {result['mw_fueltype']}\n*Engine Size:* {result['mw_enginesize']}\n*Address:* {result['mw_street_addr']}\n\nVisit {result['link']} for full details ✨🚗."""
+                        message = f"""*{result['name']}*\n\n*Condition:* {result['mw_condition']}\n*Year:* {result['mw_year']}\n*Price:* ${result['mw_price']}\n*Transmission:* {result['mw_transmission']}\n*Fuel Type:* {result['mw_fueltype']}\n*Engine Size:* {result['mw_enginesize']}\n*Address:* {result['mw_street_addr']}\n\nVisit {result['link']} for full details ✨🚗."""
                         send_image(phone_number, result['image'],  message)
                 else:
                     send_message(phone_number, "No cars found for the selected model and year.")
